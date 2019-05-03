@@ -5,6 +5,9 @@
  */
 package com.rest;
 
+import com.rest.dto.Car;
+import java.util.HashMap;
+import java.util.Map;
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 /**
@@ -13,5 +16,15 @@ import javax.ws.rs.core.Application;
  */
 @ApplicationPath ("reststart")
 public class RESTStartup extends Application{
+    
+    private static Map<Integer,Car> carDB;
+    
+    public RESTStartup(){
+            carDB=new HashMap<>();
+    }
+
+    public static Map<Integer, Car> getCarDB() {
+        return carDB;
+    }
     
 }
